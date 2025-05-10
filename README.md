@@ -4,6 +4,14 @@ A simple yet powerful password generator built with React. This application allo
 
 ---
 
+## Demo
+
+Here is a quick demonstration of how the password generator works:
+
+![Password Generator Demo](assets/password-generator-demo.gif)
+
+---
+
 ## Features
 
 - Adjustable password length
@@ -77,22 +85,25 @@ password_generator/
 
 ### Scripts
 
-- **Start Development Server**:  
+- **Start Development Server**:
+
   ```bash
   npm run dev
   ```
 
-- **Build for Production**:  
+- **Build for Production**:
+
   ```bash
   npm run build
   ```
 
-- **Preview Production Build**:  
+- **Preview Production Build**:
+
   ```bash
   npm run preview
   ```
 
-- **Lint Code**:  
+- **Lint Code**:
   ```bash
   npm run lint
   ```
@@ -136,4 +147,7 @@ This project is licensed under the MIT License.
 
 - Built with [React](https://reactjs.org/) and [Vite](https://vitejs.dev/)
 - Styled using [Tailwind CSS](https://tailwindcss.com/)
+
+```
+
 ```
