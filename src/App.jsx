@@ -21,7 +21,7 @@ function App() {
 
     // If no character sets are selected, clear the password
     if (!characters) {
-      setPassword("");
+      setPassword("Please select one option");
       return;
     }
 
@@ -32,12 +32,25 @@ function App() {
       generatedPassword += characters[randomIndex];
     }
     setPassword(generatedPassword);
-  }, [pwdLength, includeUppercase, includeLowercase, includeNumbers, includeSymbols]);
+  }, [
+    pwdLength,
+    includeUppercase,
+    includeLowercase,
+    includeNumbers,
+    includeSymbols,
+  ]);
 
   // Use effect to regenerate the password whenever the options change
   useEffect(() => {
     generatePassword();
-  }, [pwdLength, includeUppercase, includeLowercase, includeNumbers, includeSymbols, generatePassword]);
+  }, [
+    pwdLength,
+    includeUppercase,
+    includeLowercase,
+    includeNumbers,
+    includeSymbols,
+    generatePassword,
+  ]);
 
   // Reference to the password input field for copying to clipboard
   const passwordRef = useRef(null);
@@ -47,6 +60,14 @@ function App() {
     passwordRef.current?.select();
     navigator.clipboard.writeText(password);
   }, [password]);
+
+  // Check if any of the options are selected
+  const isCopyDisabled = !(
+    includeUppercase ||
+    includeLowercase ||
+    includeNumbers ||
+    includeSymbols
+  );
 
   return (
     <div className="bg-gray-900 text-white flex flex-col justify-center min-h-screen items-center">
@@ -64,7 +85,10 @@ function App() {
           />
           <button
             onClick={copyToClipboard}
-            className="p-2 bg-cyan-400 text-black text-xl rounded-r-md hover:bg-yellow-200"
+            disabled={isCopyDisabled}
+            className={`p-2 bg-cyan-400 text-black text-xl rounded-r-md hover:bg-yellow-200 ${
+              isCopyDisabled ? "cursor-not-allowed opacity-50" : ""
+            }`}
           >
             COPY
           </button>
