@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div className="bg-gray-900 text-white flex flex-col justify-center min-h-screen items-center">
-      <div className="flex bg-gray-800 flex-col items-center w-auto border-4 border-blue-500 rounded-md p-6">
+      <div className="flex bg-gray-800 flex-col items-center w-96 sm:w-[32rem] border-4 border-blue-500 rounded-md p-6">
         <header>
           <h1 className="text-4xl text-yellow-400 mb-6">Password Generator</h1>
         </header>
